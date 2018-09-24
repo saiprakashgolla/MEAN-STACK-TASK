@@ -1,0 +1,22 @@
+<div class="container">
+    <!-- <div class="form-group col-xs-12" style="margin-bottom:30px;">
+
+        <input type="search" [(ngModel)]="product.find" class="form-control" placeholder="Search">
+      </div> -->
+
+<div class="col-md-4 text-center" style="padding-top:30px;" *ngFor="let product of productDetails |
+paginate: { itemsPerPage: 10, currentPage: p, totalItems: count }; let i =index ">
+  <img src="{{product['Image Src']}}" height="350px" width="80%">
+  <div style="padding-top:10px;"> <p> Title:{{product.Title}}</p>
+   
+  <p> SKU: {{product['Variant SKU']}}</p>
+  <p> Price: {{product['Variant Price']}}</p>
+  </div>
+
+</div>
+
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+
